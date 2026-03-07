@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shivakumar C | Python Full Stack Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand logo" href="#home">SK<span class="dot">.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars" style="color:#ff5c35; font-size:1.2rem;"></i>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav gap-lg-3 mt-2 mt-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HOME ===== -->
+  <section id="home" class="hero-section d-flex align-items-center">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+    </div>
+    <div class="container">
+      <div class="row align-items-center gy-5">
+
+        <!-- Left: Text -->
+        <div class="col-lg-6">
+          <p class="hello-text">Hello<span class="dot">!</span></p>
+          <h2 class="name-sub">I'm <span class="highlight">Shivakumar C</span></h2>
+          <h1 class="role-title">Python Full Stack<br/>Developer</h1>
+          <p class="hero-desc">
+            Building scalable, modern web apps with Django, FastAPI, React &amp; Tailwind CSS.
+          </p>
+          <div class="hero-btns">
+            <a href="#contact" class="btn-primary-custom">Contact</a>
+            <a href="#about" class="btn-outline-custom">About Me</a>
+            <a href="assets/shivakumar_resume.pdf" download="Shivakumar_C_Resume.pdf" class="btn-download-custom">
+              <i class="fas fa-download"></i> Download CV
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Photo -->
+        <div class="col-lg-6 d-flex justify-content-center">
+          <div class="hero-img-wrapper">
+            <div class="hero-ring outer-ring"></div>
+            <div class="hero-ring inner-ring"></div>
+            <div class="hero-avatar">
+              <img src="assets/shiva4.jpeg" alt="Shivakumar C"
+                onerror="this.style.display='none'; document.getElementById('profilePlaceholder').style.display='flex';" />
+              <div id="profilePlaceholder" class="profile-placeholder">
+                <i class="fas fa-user"></i>
+                <span>Add Photo</span>
+              </div>
+            </div>
+            <div class="chevron c1"><i class="fas fa-chevron-right"></i></div>
+            <div class="chevron c2"><i class="fas fa-chevron-right"></i></div>
+            <div class="chevron c3"><i class="fas fa-chevron-left"></i></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tech Tags -->
+      <div class="tech-bar mt-5">
+        <span>Python</span>
+        <span>Django</span>
+        <span>FastAPI</span>
+        <span>React.js</span>
+        <span>Tailwind</span>
+        <span>MySQL</span>
+        <span>GitHub</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2 class="section-title text-center">About Me</h2>
+      <div class="title-line mx-auto mb-5"></div>
+
+      <div class="row gy-5">
+
+        <!-- Left: Services -->
+        <div class="col-lg-4">
+          <h4 class="what-title mb-4">What I Do</h4>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-code"></i></div>
+            <div>
+              <h5>Web Development</h5>
+              <p>Full-stack apps with Django, FastAPI &amp; React</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-plug"></i></div>
+            <div>
+              <h5>API Integration</h5>
+              <p>RESTful APIs, DB management &amp; deployment</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-database"></i></div>
+            <div>
+              <h5>Database Design</h5>
+              <p>MySQL, MongoDB, SQLite schema &amp; queries</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Bio + Stats + Skills -->
+        <div class="col-lg-8">
+          <p class="about-desc mb-4">
+            Results-driven Python Full Stack Developer with expertise in building scalable web applications
+            using Django, FastAPI, and modern JavaScript frameworks. Proficient in both front-end and back-end
+            development with hands-on experience in API integration, database management, and deployment
+            on cloud platforms.
+          </p>
+
+          <!-- Stats -->
+          <div class="row stats-row text-center mb-5">
+            <div class="col-4">
+              <div class="stat-num counter" data-target="3">0</div>
+              <p class="stat-label">Projects Built</p>
+            </div>
+            <div class="col-4">
+              <div class="stat-num counter" data-target="5">0</div>
+              <p class="stat-label">Months Experience</p>
+            </div>
+            <div class="col-4">
+              <div class="stat-num counter" data-target="4">0</div>
+              <p class="stat-label">Certifications</p>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <h5 class="skills-title">Technical Skills</h5>
+          <div class="skill-item">
+            <div class="skill-label"><span>Python</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Django / FastAPI</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>React.js</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>HTML5 / CSS3 / Bootstrap</span><span>88%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>MySQL / MongoDB</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Git / GitHub</span><span>82%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+
+<section id="experience" class="experience-section">
+    <div class="container">
+      <h2 class="section-title text-center">Experience</h2>
+      <div class="title-line mx-auto mb-5"></div>
+
+      <!-- Work Experience — 2 cards centered -->
+      <h4 class="timeline-heading text-center mb-4"><i class="fas fa-briefcase me-2"></i>Work Experience</h4>
+      <div class="row g-4 justify-content-center mb-5">
+
+        <div class="col-lg-5 col-md-6">
+          <div class="timeline-card h-100">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <h5>Web Developer</h5>
+              <span class="tl-company">Make Clouds</span>
+              <span class="tl-date">January 2025 – May 2025</span>
+              <p>Developed responsive web pages using HTML, CSS, JavaScript &amp; Bootstrap. Integrated frontend with backend APIs, fixed bugs, improved page performance and ensured cross-browser compatibility. Collaborated with team members to deliver real-time project features on time.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-6">
+          <div class="timeline-card h-100">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <h5>Python Full Stack Trainee</h5>
+              <span class="tl-company">Training Program</span>
+              <span class="tl-date">June 2025 – February 2026</span>
+              <p>Core Python, Django, FastAPI, React.js, MySQL. Built full-stack capstone application with Python backend, dynamic frontend and SQL database. Practiced Git/GitHub version control throughout.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+</section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <h2 class="section-title text-center">Projects</h2>
+      <div class="title-line mx-auto mb-5"></div>
+
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="project-card">
+            <div class="project-icon"><i class="fas fa-utensils"></i></div>
+            <h4>Food Ordering System</h4>
+            <p>Restaurant portal with user authentication, dynamic menu management, real-time order tracking &amp; Django ORM for efficient database operations.</p>
+            <div class="tech-tags">
+              <span>Django</span><span>SQLite3</span><span>Bootstrap</span><span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/shivakumarofficial" target="_blank" class="link-btn">
+                <i class="fab fa-github"></i> Code
+              </a>
+              <a href="#" class="link-btn live">
+                <i class="fas fa-external-link-alt"></i> Live
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="project-card">
+            <div class="project-icon"><i class="fas fa-calendar-check"></i></div>
+            <h4>Time-Off Management</h4>
+            <p>Full-stack leave management with role-based access for Employee, Manager &amp; Admin. Features approval workflow, holiday management &amp; PDF reports.</p>
+            <div class="tech-tags">
+              <span>Django</span><span>SQLite</span><span>ReportLab</span><span>CSS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/shivakumarofficial" target="_blank" class="link-btn">
+                <i class="fab fa-github"></i> Code
+              </a>
+              <a href="#" class="link-btn live">
+                <i class="fas fa-external-link-alt"></i> Live
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="project-card">
+            <div class="project-icon"><i class="fas fa-car"></i></div>
+            <h4>Car Sales System</h4>
+            <p>Car dealership management with inventory CRUD, search &amp; filter for vehicle listings, admin dashboard and Django ORM for database schema management.</p>
+            <div class="tech-tags">
+              <span>Django</span><span>SQLite3</span><span>Bootstrap</span><span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/shivakumarofficial" target="_blank" class="link-btn">
+                <i class="fab fa-github"></i> Code
+              </a>
+              <a href="#" class="link-btn live">
+                <i class="fas fa-external-link-alt"></i> Live
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title text-center">Get In Touch</h2>
+      <div class="title-line mx-auto mb-5"></div>
+
+      <div class="row g-5 justify-content-center">
+
+        <!-- Info -->
+        <div class="col-lg-5">
+          <div class="contact-info-box">
+            <h4>Let's Talk</h4>
+            <p>Have a project idea or opportunity? I'd love to hear from you!</p>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+91 8925063168</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>shivakumarchandrappam@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Hosur, Tamil Nadu, India</span>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-linkedin"></i>
+              <span>shivakumar-c-b55238312</span>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-github"></i>
+              <span>shivakumarofficial</span>
+            </div>
+            <div class="social-links mt-4">
+              <a href="https://github.com/shivakumarofficial" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://linkedin.com/in/shivakumar-c-b55238312" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="mailto:shivakumarchandrappam@gmail.com" title="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="col-lg-5">
+          <div class="contact-form">
+            <form id="contactForm" novalidate>
+              <div class="mb-3">
+                <input type="text" class="custom-input" placeholder="Your Name" required />
+              </div>
+              <div class="mb-3">
+                <input type="email" class="custom-input" placeholder="Your Email" required />
+              </div>
+              <div class="mb-3">
+                <input type="text" class="custom-input" placeholder="Subject" />
+              </div>
+              <div class="mb-4">
+                <textarea class="custom-input" rows="5" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="btn-primary-custom w-100" id="submitBtn">
+                Send Message &nbsp;<i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer text-center">
+    <p>&#169; 2025 <span class="highlight">Shivakumar C</span> &mdash; Python Full Stack Developer</p>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTop" title="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

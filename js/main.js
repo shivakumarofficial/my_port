@@ -43,11 +43,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* =============================================
-     3. SMOOTH SCROLL
+     3. SMOOTH SCROLL + close mobile menu
      ============================================= */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
-      const href   = this.getAttribute('href');
+      const href = this.getAttribute('href');
       if (!href || href === '#') return;
       const target = document.querySelector(href);
       if (target) {
@@ -106,25 +106,110 @@ document.addEventListener('DOMContentLoaded', function () {
   animateCounters();
 
   /* =============================================
-     6. CONTACT FORM
+     6. CONTACT FORM — Formspree
+     Form ID : xnjgjprr
+     Delivers : shivakumarchandrappam@gmail.com
      ============================================= */
+  const FORMSPREE_URL = 'https://formspree.io/f/xnjgjprr';
+
   const form      = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
+  const statusBox = document.getElementById('formStatus');
+
   if (form && submitBtn) {
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
-      submitBtn.innerHTML        = '&#10003; Message Sent!';
-      submitBtn.style.background = '#22c55e';
-      submitBtn.style.border     = '2px solid #22c55e';
-      submitBtn.disabled         = true;
-      setTimeout(function () {
-        submitBtn.innerHTML        = 'Send Message &nbsp;<i class="fas fa-paper-plane"></i>';
-        submitBtn.style.background = '';
-        submitBtn.style.border     = '';
-        submitBtn.disabled         = false;
-        form.reset();
-      }, 3000);
+
+      const name    = document.getElementById('senderName')?.value.trim();
+      const email   = document.getElementById('senderEmail')?.value.trim();
+      const subject = document.getElementById('senderSubject')?.value.trim();
+      const message = document.getElementById('senderMessage')?.value.trim();
+
+      // Validate
+      if (!name || !email || !message) {
+        showStatus('Please fill in Name, Email and Message.', 'warn');
+        shakeBtn(submitBtn);
+        return;
+      }
+      if (!isValidEmail(email)) {
+        showStatus('Please enter a valid email address.', 'warn');
+        shakeBtn(submitBtn);
+        return;
+      }
+
+      // Loading state
+      submitBtn.innerHTML     = '<i class="fas fa-spinner fa-spin"></i>&nbsp; Sending…';
+      submitBtn.disabled      = true;
+      submitBtn.style.opacity = '0.75';
+      hideStatus();
+
+      try {
+        const response = await fetch(FORMSPREE_URL, {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name:     name,
+            email:    email,
+            subject:  subject || '(No subject)',
+            message:  message,
+            _replyto: email,
+            _subject: 'Portfolio message from ' + name
+          })
+        });
+
+        if (response.ok) {
+          submitBtn.innerHTML         = '&#10003;&nbsp; Message Sent!';
+          submitBtn.style.background  = '#22c55e';
+          submitBtn.style.borderColor = '#22c55e';
+          submitBtn.style.opacity     = '1';
+          showStatus('Thanks ' + name + '! Your message was sent. Shivakumar will reply soon.', 'success');
+          form.reset();
+          setTimeout(function () {
+            submitBtn.innerHTML         = 'Send Message &nbsp;<i class="fas fa-paper-plane"></i>';
+            submitBtn.style.background  = '';
+            submitBtn.style.borderColor = '';
+            submitBtn.disabled          = false;
+            submitBtn.style.opacity     = '1';
+          }, 4000);
+        } else {
+          const data = await response.json().catch(() => ({}));
+          throw new Error((data.errors && data.errors[0] && data.errors[0].message) || 'Server error');
+        }
+
+      } catch (err) {
+        console.error('Form error:', err);
+        submitBtn.innerHTML         = 'Send Message &nbsp;<i class="fas fa-paper-plane"></i>';
+        submitBtn.style.background  = '';
+        submitBtn.style.borderColor = '';
+        submitBtn.disabled          = false;
+        submitBtn.style.opacity     = '1';
+        showStatus('Failed to send. Please email directly: shivakumarchandrappam@gmail.com', 'error');
+      }
     });
+  }
+
+  function isValidEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+
+  function showStatus(msg, type) {
+    if (!statusBox) return;
+    statusBox.textContent   = msg;
+    statusBox.style.display = 'block';
+    statusBox.className     = 'form-status form-status--' + type;
+  }
+
+  function hideStatus() {
+    if (!statusBox) return;
+    statusBox.style.display = 'none';
+    statusBox.textContent   = '';
+  }
+
+  function shakeBtn(el) {
+    let count = 0;
+    const shake = setInterval(function () {
+      count++;
+      el.style.transform = count % 2 === 0 ? 'translateX(-7px)' : 'translateX(7px)';
+      if (count >= 6) { clearInterval(shake); el.style.transform = ''; }
+    }, 60);
   }
 
 });
